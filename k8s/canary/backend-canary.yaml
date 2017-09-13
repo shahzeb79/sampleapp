@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: docker.io/shahzeb799/gceme:1.0.0
+        image: shahzeb799/gceme:1.0.0
         resources:
           limits:
             memory: "500Mi"
