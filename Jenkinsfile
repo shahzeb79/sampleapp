@@ -2,10 +2,13 @@ node {
   def project = 'umapp-cluster'
   def appName = 'gceme'
   def feSvcName = "${appName}-frontend"
-  def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+  def imageTag = "shahzeb799/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 
   checkout scm
 
+  stage 'Docker Login'
+  sh("docker login --username=shahzeb799 --password=Shani@123")
+  
   stage 'Build image'
   sh("docker build -t ${imageTag} .")
 
